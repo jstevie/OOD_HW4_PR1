@@ -1,5 +1,5 @@
 //GeometricObject.java – The original GeometricObject class
-public abstract class GeometricObject {
+public abstract class GeometricObject implements Comparable <GeometricObject> {
     private String color = "white";
     private boolean filled;
     private java.util.Date dateCreated;
@@ -53,4 +53,14 @@ public abstract class GeometricObject {
 
     /** Abstract method getPerimeter */
     public abstract double getPerimeter();
+
+    /**
+     * Compares two GeometricObjects and returns -1, 0, or 1 depending on which has greater area
+     * @param obj GeometricObject being compared to
+     * @return Returns -1 if this is less than obj, 0 if they are equal, and 1 if this is greater than obj
+     */
+    @Override
+    public int compareTo(GeometricObject obj) {
+        return Double.compare(this.getArea(), obj.getArea());
+    }
 }

@@ -49,5 +49,19 @@ class Circle extends GeometricObject {
         return "[Circle] radius = " + radius;
     }
 
-    //
+    /**
+     * Compares two Circles and return Circle with greatest area
+     * @param circle2  Circle being compared
+     * @return Returns Circle with greatest area, or null if equal radii
+     */
+    public Circle max(Circle circle2){
+        int compare = this.compareTo(circle2);
+        if (compare > 0)
+            return this;
+        else if (compare == 0)
+            return null;
+        else
+            return circle2;
+    }
+
 }
