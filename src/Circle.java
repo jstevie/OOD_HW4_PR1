@@ -64,4 +64,23 @@ class Circle extends GeometricObject {
             return circle2;
     }
 
+    /**
+     * Compares two Circles and prints radius/radii of max Circle(s)
+     * @param circle2  Circle being compared
+     * @return Returns Circle with greatest area, or null if equal radii
+     */
+    public Circle findAndPrintMax(Circle circle2) {
+        Circle maxCircle = this.max(circle2);
+        if (maxCircle != null) {
+            System.out.println("The max circle's radius is " + maxCircle.getRadius());
+            System.out.println(maxCircle.toString());
+        }
+        else {
+            System.out.println("The circles's radii are " + this.getRadius());
+            System.out.println(this.toString());
+            System.out.println(circle2.toString());
+        }
+        return maxCircle;
+    }
+
 }
